@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFSC CODE Checker</title>
+</head>
+<body>
+<%if (!locals.details){%>
+<form action="/check" method="post">
+    <label for="ifsccode">IFSC CODE</label><br>
+    <input type="text" id = "ifsc" name="ifsc"><br>
+    <input type="submit" value="submit">
+</form>
+<%}else{%>
+<h2>Your Bank is <%=details.BANK%></h2>
+<h2>Contact No: <%= details.CONTACT%></h2>
+<h2>State :<%= details.STATE%></h2>
+<form action="/return" method="get">
+    <input type="submit" value="Submit">
+</form>
+
+<%}%>
+</body>
+</html>
